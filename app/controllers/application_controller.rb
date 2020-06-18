@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    def landing
-        
+    def home
+        render 'layouts/home'
     end
 end
