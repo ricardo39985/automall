@@ -1,15 +1,6 @@
-
 <%=form_for (listing) do |f| %>
-<% if listing.errors.any? %>
-
-<% @listing.errors.full_messages.each do |error| %>
-  <p><%=error%></p>
-<% end %>
-  
-<% end %>
   <p>
     Year <%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %>
-    
   </p>
   <p>
     <%= f.label :make %><br />
@@ -31,6 +22,28 @@
     <%= f.label :color %><br />
     <%= f.text_field :color %>
   </p>
-  
-  <p><%= f.submit%></p>
+  <%= f.submit class: "btn btn-large btn-primary"%>
+<% end %>
+<% if listing.errors.any? %>
+  <% listing.errors.full_messages.each do |error| %>
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+      <!-- Position it -->
+      <div style="position: absolute; top: 0; right: 0;">
+        <!-- Then put toasts within -->
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small class="text-muted">just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            See? Just like this.
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
