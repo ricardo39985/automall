@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 # Use Active Storage variant
 gem 'bootstrap', '~> 4.5.0'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'jquery-rails'
 gem 'material_design_lite-sass'
 
